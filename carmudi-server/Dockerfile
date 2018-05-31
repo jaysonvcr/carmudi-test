@@ -1,9 +1,5 @@
 FROM FROM brunogasparin/laravel-apache:5-onbuild
 
-RUN apt-get update \
-  && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev \
-  && docker-php-ext-install pdo_mysql mysqli mbstring gd iconv mcrypt
-
 RUN mkdir -p /carmudi-server
 
 WORKDIR /carmudi-server
