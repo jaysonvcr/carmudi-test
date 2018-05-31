@@ -3,7 +3,7 @@ FROM php:7.2-apache
 
 RUN mkdir -p /carmudi-server
 WORKDIR /carmudi-server
-COPY ./ ./
+COPY ./ /var/www/html
 
 COPY php.ini /usr/local/etc/php/
 COPY default.conf /etc/apache2/sites-enabled/000-default.conf
