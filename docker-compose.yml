@@ -26,24 +26,17 @@ services:
   #   links:
   #     - db
 
-  php:
-    build: php
-    expose:
-      - 9000
-    volumes:
-    - ./carmudi-server/www:/var/www/html
-
-  apache2:
-    image: webdevops/apache:latest
-      args:
-        - PHP_SOCKET=php:9000
-      volumes:
-        - ./carmudi-server/www:/var/www/html
-      ports:
-        - 5000:80
-        - 443:443
-      links:
-        - php
+  web:
+   image: tutum/apache-php
+   environment:
+     - ALLOW_OVERRIDE=true
+   ports:
+     - "5000:80"
+   links:
+     - db
+   volumes:
+     - ./carmudi-server:/app
+     
 
   frontend:
     build:
