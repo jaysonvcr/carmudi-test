@@ -1,17 +1,37 @@
-FROM brunogasparin/laravel-apache:5-onbuild
+FROM php:7.2.3-fpm
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    mysql-client \
+    libpng-dev \
+    locales \
+    zip
 
 RUN mkdir -p /carmudi-server
-
 WORKDIR /carmudi-server
-
 COPY ./ /var/www/html
-COPY php.ini /usr/local/etc/php/
-COPY default.conf /etc/apache2/sites-enabled/000-default.conf
 
-RUN curl -sS https://getcomposer.org/installer | php
-RUN mv composer.phar /usr/local/bin/composer
 
-COPY .env.example .env
-RUN composer install
-RUN php artisan key:generate
+
+#RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+#RUN docker-php-ext-install pdo_mysql gd mbstring zip
+#
+#
+#
+#FROM brunogasparin/laravel-apache:5-onbuild
+#
+#RUN mkdir -p /carmudi-server
+#
+#WORKDIR /carmudi-server
+#
+#COPY ./ /var/www/html
+#COPY php.ini /usr/local/etc/php/
+#COPY default.conf /etc/apache2/sites-enabled/000-default.conf
+#
+#RUN curl -sS https://getcomposer.org/installer | php
+#RUN mv composer.phar /usr/local/bin/composer
+#
+#COPY .env.example .env
+#RUN composer install
+#RUN php artisan key:generate
 

@@ -30,8 +30,8 @@ services:
     image: nginx:1.10-alpine
     # build: 
     #   context: ./carmudi-server
-    # volumes: 
-    #   - ./carmudi-server/:/var/www
+    volumes: 
+      - ./carmudi-server/:/usr/share/html/carmudi-server
     ports:  
       - 80:80
 
