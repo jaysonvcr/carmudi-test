@@ -1,15 +1,15 @@
-FROM php:7.2.3-fpm
+#FROM php:7.2.3-fpm
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    mysql-client \
-    libpng-dev \
-    locales \
-    zip
+#RUN apt-get update && apt-get install -y \
+    #build-essential \
+    #mysql-client \
+    #libpng-dev \
+    #locales \
+    #zip
 
-RUN mkdir -p /carmudi-server
-WORKDIR /carmudi-server
-COPY ./ /var/www/html
+#RUN mkdir -p /carmudi-server
+#WORKDIR /carmudi-server
+#COPY ./ /var/www/html
 
 
 
