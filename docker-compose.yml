@@ -26,6 +26,15 @@ services:
     links:
       - db
 
+  web:
+    image: nginx:1.10-alpine
+    build: 
+      context: ./carmudi-server
+    # volumes: 
+    #   - ./carmudi-server/:/var/www
+    ports:  
+      - 80:80
+
   # web:
   #  image: tutum/apache-php
   #  environment:
