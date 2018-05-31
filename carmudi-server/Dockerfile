@@ -1,4 +1,4 @@
-FROM FROM brunogasparin/laravel-apache:5-onbuild
+FROM brunogasparin/laravel-apache:5-onbuild
 
 RUN mkdir -p /carmudi-server
 
