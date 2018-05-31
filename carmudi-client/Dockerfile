@@ -2,13 +2,13 @@ FROM node
 
 # if left blank app will run with dev settings
 # to build production image run:
-# $ docker build ./frontend --build-args app_env=production
+# $ docker build ./carmudi-client --build-args app_env=production
 ENV NPM_CONFIG_LOGLEVEL warn
 ARG app_env
 ENV NODE_ENV $app_env
 
-RUN mkdir -p /frontend
-WORKDIR /frontend
+RUN mkdir -p /carmudi-client
+WORKDIR /carmudi-client
 COPY ./ ./
 
 RUN npm install
