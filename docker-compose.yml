@@ -30,7 +30,7 @@ services:
     build:
       context: ./carmudi-client
       args:
-        app_env: ${APP_ENV}
+        app_env: "development"
     volumes:
       - ./carmudi-client/src:/carmudi-client/src 
     ports:
