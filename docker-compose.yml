@@ -22,7 +22,7 @@ services:
     volumes:
       - ./carmudi-server:/carmudi-server
     ports:
-      - "5000:8080"
+      - "5000:80"
     links:
       - db
 
