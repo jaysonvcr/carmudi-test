@@ -14,22 +14,22 @@ services:
     ports:
         - "33061:3306"
 
-  api:
-    build:
-      context: ./carmudi-server
-      args:
-        app_env: "development"
-    volumes:
-      - ./carmudi-server:/carmudi-server
-    ports:
-      - "5000:80"
-    links:
-      - db
+  # api:
+  #   build:
+  #     context: ./carmudi-server
+  #     args:
+  #       app_env: "development"
+  #   volumes:
+  #     - ./carmudi-server:/carmudi-server
+  #   ports:
+  #     - "5000:80"
+  #   links:
+  #     - db
 
   web:
     image: nginx:1.10-alpine
-    build: 
-      context: ./carmudi-server
+    # build: 
+    #   context: ./carmudi-server
     # volumes: 
     #   - ./carmudi-server/:/var/www
     ports:  
