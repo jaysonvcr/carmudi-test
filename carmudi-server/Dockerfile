@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM FROM brunogasparin/laravel-apache:5-onbuild
 
 RUN apt-get update \
   && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev \
