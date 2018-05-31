@@ -21,6 +21,7 @@ services:
         app_env: "development"
     volumes:
       - ./carmudi-server:/var/www/html
+      - ./default.conf:/etc/apache2/sites-enabled/000-default.conf
     ports:
       - "5000:8080"
     links:
