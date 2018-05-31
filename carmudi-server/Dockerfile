@@ -1,6 +1,5 @@
 FROM php:7.2-apache
 
-
 RUN mkdir -p /carmudi-server
 WORKDIR /carmudi-server
 COPY ./ /var/www/html
