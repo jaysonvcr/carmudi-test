@@ -8,8 +8,5 @@ RUN apt-get update && apt-get install -y libmcrypt-dev \
 
 WORKDIR /var/www
 
-COPY .env.example .env
+COPY /var/www/.env.example /var/www/.env
 
-#RUN php artisan migrate:install
-#RUN php artisan migrate
-#RUN php artisan db:seed
