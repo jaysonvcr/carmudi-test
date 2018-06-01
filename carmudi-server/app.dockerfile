@@ -10,7 +10,8 @@ WORKDIR /var/www
 
 COPY .env.example .env
 
-RUN chmod -R 775 storage/
+RUN chmod -R o+w storage/
+
 
 RUN php artisan migrate:install
 RUN php artisan migrate
