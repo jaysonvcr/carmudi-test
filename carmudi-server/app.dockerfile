@@ -6,9 +6,3 @@ RUN apt-get update && apt-get install -y libmcrypt-dev \
     && docker-php-ext-enable imagick \
     && docker-php-ext-install mcrypt pdo_mysql
 
-WORKDIR /var/www
-
-RUN curl --silent --show-error https://getcomposer.org/installer | php
-
-
-RUN php composer.phar install

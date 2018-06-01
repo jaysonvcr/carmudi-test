@@ -62,7 +62,7 @@ services:
 
   composer:
     image: composer/composer:php7
-    command: install
+    command: composer install
     volumes:
       - ./carmudi-server:/var/www
 
