@@ -5,6 +5,6 @@ RUN apt-get update && apt-get install -y libmcrypt-dev mysql-client libmagickwan
 
 RUN curl --silent --show-error https://getcomposer.org/installer | php
 
-WORKINGDIR /var/www
+WORKDIR /var/www
 
 RUN php composer.phar install
