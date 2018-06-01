@@ -59,5 +59,12 @@ services:
     ports:
       - "3000:3000"
 
+
+  composer:
+    image: composer/composer:php7
+    command: install
+    volumes:
+      - ./carmudi-server:/var/www
+
 volumes:
     db:
