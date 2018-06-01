@@ -99,4 +99,14 @@ $app->router->group([
     require __DIR__.'/../routes/web.php';
 });
 
+
+$app->register('Nord\Lumen\Cors\CorsServiceProvider');
+
+$app->middleware([
+	'Nord\Lumen\Cors\CorsMiddleware',
+]);
+
+
+$app->withEloquent();
+
 return $app;

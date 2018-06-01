@@ -17,3 +17,14 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->email,
     ];
 });
+
+
+$factory->define(App\Vehicle::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name, 
+        'engine_displacement' => $faker->numberBetween(100,900), 
+        'engine_power' => $faker->numberBetween(100,900), 
+        'price' => $faker->randomNumber(3), 
+        'location' => $faker->address
+    ];
+});
