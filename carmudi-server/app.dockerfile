@@ -1,10 +1,7 @@
-FROM php:7.2.2-fpm
+FROM php:7.0.4-fpm
 
-RUN apt-get update && apt-get install -y libmcrypt-dev mysql-client libmagickwand-dev --no-install-recommends pecl install imagick docker-php-ext-enable imagick docker-php-ext-install mcrypt pdo_mysql
-
-
-RUN curl --silent --show-error https://getcomposer.org/installer | php
-
-WORKDIR /var/www
-
-RUN php composer.phar install
+RUN apt-get update && apt-get install -y libmcrypt-dev \
+    mysql-client libmagickwand-dev --no-install-recommends \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick \
+    && docker-php-ext-install mcrypt pdo_mysql
