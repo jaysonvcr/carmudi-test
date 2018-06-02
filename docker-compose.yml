@@ -23,7 +23,7 @@ services:
       - ./carmudi-server:/var/www
     environment:
       - "DB_PORT=3306"
-      - "DB_HOST=database"
+      - "DB_HOST=db"
 
   # The Web Server
   web:
@@ -47,7 +47,6 @@ services:
       - ./carmudi-client/src:/carmudi-client/src 
     ports:
       - "3000:3000"
-
 
 volumes:
     db:
