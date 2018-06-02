@@ -6,6 +6,7 @@ services:
     image: mysql:5.7
     volumes:
       - db:/var/lib/mysql
+    restart: always
     environment:
       - "MYSQL_DATABASE=homestead"
       - "MYSQL_USER=homestead"
